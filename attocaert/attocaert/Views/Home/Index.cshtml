@@ -1,0 +1,62 @@
+﻿@model IEnumerable<attocaert.Models.tbl_product>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <body style="background-image:url(https://n.todayshipit.com/img/products/128869-envio-libre-digital-suelo-de-madera-fotografia-backdrops-recien-nacido-fantasia-de-vinilo-fondos-para-estudio-fotografico-c396.jpg);background-repeat:no-repeat;background-size:100%">
+    </body>
+<div class="row">
+    <div class="col-lg-10 col-md-10 col-sm-10" >
+        @if (TempData["total"] == null)
+        {
+
+            <h3>
+                <strong>Total</strong>: 0 RD
+            </h3>
+        }
+        else
+        {
+                <h3><strong>Total:</strong> @TempData["total"] RD</h3>
+
+                }
+
+</div>
+
+
+    <div class="col-lg-2 col-md-2 col-sm-2">
+        <h3 style="color:black; font-family:'Arial Rounded MT';text-align:center"> <span type="button" class="btn btn-info btn-lg">@Html.ActionLink("Mi Carrito", "checkout", "Home")</span></h3>
+    </div>
+
+
+
+
+    </div>
+<hr />
+<br />
+<div class="row" style="margin-bottom:100px;">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+
+
+
+            <div class="panel panel-primary col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">@item.pro_name </div>
+                    <div class="panel-body">
+                        <img style="margin-left:30%" height="215" width="215" class="img-responsive" src="@Url.Content(item.pro_image)">
+                        <p><strong>Precio:</strong> @item.pro_price</p>
+                    </div>
+
+                    <h4 style="color:black; font-family:'Arial Rounded MT';text-align:center"type="button"> <span class="btn btn-outline-warning">@Html.ActionLink("Agregar al Carrito", "Adtocart", new { id = @item.pro_id })</span></h4>
+
+
+
+                </div>
+
+            </div>
+
+        }
+    }
+</div>

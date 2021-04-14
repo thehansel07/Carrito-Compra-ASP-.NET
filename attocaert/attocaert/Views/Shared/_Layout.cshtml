@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuyNow - Online food store</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <environment include="Development">
+        <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body class="@ViewBag.BodyClass d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#ffff6c;">
+
+        <img src="~/Content/Imagenes/logo.png" width="10%" style="margin-top:-10px;margin-left:25px">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" style="color:black;">
+                <li style="font-family:Arial black; color:black;font-size:20px">
+                    @Html.ActionLink("Carrito de Compra", "Index", "Home")
+                </li>
+                
+
+            </ul>
+        </div>
+
+
+
+
+
+
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container body-content flex-shrink-0">
+        @RenderBody()
+    </div>
+    <!-- Footer -->
+    <footer id="myFooter" class="page-footer" style="background-color:black;color:white">
+        <div class="container">
+            <div class="row" style="margin-top:50px;margin-right:20%">
+                <div class="col-sm-3">
+                    <a style="width: 100%;height: 150px;margin-top: 5px;" asp-controller="Home" asp-action="Index" class="navbar-brand navLogo footerLogo"></a>
+                </div>
+                <div class="col-sm-2" >
+                    <h3>Get started</h3>
+                    <ul>
+                        <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h3>About us</h3>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks" style="font-size:40px;">
+                        <a href="#" class="twitter" ><i class="fab fa-twitter" ></i></a>
+                        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fab fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-info" style="margin-left:25px">Contact us</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style="margin-left:25%">
+        </div>
+    </footer>
+    <!-- Footer -->
+
+   
+
+    @RenderSection("Scripts", required: false)
+</body>
